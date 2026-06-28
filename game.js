@@ -237,7 +237,7 @@ function resetCycle() {
   state.timerActive = false;
   state.timerRemaining = 0;
   state.message = 'Подойди к колодцу и нажимай Пробел.';
-  state.bannerText = 'Таскаешь воду из колодца к бочке. Держись!';
+  state.bannerText = 'Наполни бочку водой из колодца поскорее. Не забудь включить звук!';
   state.bannerMessageIndex = 0;
 }
 
