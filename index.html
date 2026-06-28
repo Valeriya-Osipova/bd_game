@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ведро для монашки</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Ведро для монашки</h1>
+        <p>Таскай воду из колодца к бочке — и не зевай, пока старшая монашка не вмешается.</p>
+      </header>
+
+      <section class="hud" aria-label="Игровая панель">
+        <div class="panel">
+          <span>Ведро</span>
+          <strong id="bucketStatus">Пустое</strong>
+        </div>
+        <div class="panel">
+          <span>Бочка</span>
+          <strong id="barrelStatus">0 / 10</strong>
+        </div>
+        <div class="panel panel-wide">
+          <span>Состояние</span>
+          <strong id="statusText">Подойди к колодцу и нажимай Пробел.</strong>
+          <div id="timerText" class="timer-text">Таймер: не активен</div>
+        </div>
+      </section>
+
+      <div class="game-shell">
+        <canvas id="game" width="1000" height="520"></canvas>
+        <div id="introOverlay" class="intro-overlay" role="dialog" aria-modal="true">
+          <div class="intro-card">
+            <h2>Матвей, с днем рождения!</h2>
+            <p>Я долго думала какую игру тебе подарить и не нашла в стиме ничего подходящего, поэтому написала свою ахаха. Помню как в тае ты заставил меня играть за монашку... Довольно травмирующий опыт был таскать эти ведра из колодца и в итоге...</p>
+            <button id="startButton" class="start-button" type="button">Начать игру</button>
+          </div>
+        </div>
+      </div>
+
+      <button id="smokeButton" class="smoke-button" type="button">Курить</button>
+
+      <p class="hint">
+        Управление: ← → или A / D, Пробел — наполнять ведро у колодца, E — вылить в бочку.
+      </p>
+    </main>
+
+    <script type="module" src="game.js"></script>
+  </body>
+</html>

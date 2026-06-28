@@ -1,0 +1,177 @@
+:root {
+  color-scheme: dark;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a2233 0%, #303b4d 100%);
+  color: #f4e7d3;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app {
+  width: min(960px, 100%);
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.header p {
+  margin: 0 0 16px;
+  color: #d7c6a2;
+}
+
+.hud {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 12px;
+}
+
+.panel {
+  background: rgba(16, 22, 31, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.panel span {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8fa2b8;
+}
+
+.panel strong {
+  font-size: 0.95rem;
+}
+
+.timer-text {
+  margin-top: 2px;
+  font-size: 0.92rem;
+  color: #f4e7d3;
+  display: none
+}
+
+.timer-warning {
+  color: #ff6b6b;
+  animation: timerBlink 0.8s steps(2, start) infinite;
+}
+
+@keyframes timerBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.panel-wide {
+  grid-column: span 1;
+}
+
+.game-shell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+canvas {
+  width: 100%;
+  aspect-ratio: 1000 / 520;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(8, 12, 18, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.intro-overlay.hidden {
+  display: none;
+}
+
+.intro-card {
+  max-width: 380px;
+  width: 100%;
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(23, 31, 43, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.intro-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.45rem;
+}
+
+.intro-card p {
+  margin: 0 0 16px;
+  color: #d9c9a6;
+  line-height: 1.5;
+}
+
+.start-button,
+.smoke-button {
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.start-button {
+  background: rgba(122, 182, 115, 0.95);
+  color: #102014;
+}
+
+.smoke-button {
+  margin-top: 12px;
+  background: rgba(209, 154, 79, 0.95);
+  color: #24150d;
+}
+
+.smoke-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.hint {
+  margin-top: 12px;
+  color: #d7c6a2;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .hud {
+    grid-template-columns: 1fr;
+  }
+}
