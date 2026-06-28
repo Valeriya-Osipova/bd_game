@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '24'
 
@@ -27,7 +27,8 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v6
         with:
-          enablement: github-actions
+          token: ${{ secrets.PAGES_TOKEN || github.token }}
+          enablement: ${{ secrets.PAGES_TOKEN != '' && 'github-actions' || 'false' }}
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v5
