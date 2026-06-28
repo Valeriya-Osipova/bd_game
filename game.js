@@ -144,7 +144,7 @@ function startGame() {
     introOverlay.classList.add('hidden');
   }
   state.message = 'Подойди к колодцу и нажимай Пробел.';
-  state.bannerText = 'Наполни бочку поскорее. У тебя получится!';
+  state.bannerText = 'Наполни бочку поскорее. У тебя получится! Не забудь включить звук!';
   updateHud();
   if (!loopStarted) {
     loopStarted = true;
